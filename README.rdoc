@@ -1,10 +1,11 @@
 == Yet Another Ruby on Rails Application
 
+
 This is my own personal basic stack application to fork of new projects from. It is currently under heavy construction!
 
 Currently implemented features:
 
-* Rails 4.1.0
+* Rails 4.1.1
 * RSpec 3.0.0.beta2
 * Sass/Coffeescript
 * Layout is bootstrapped (hahaha!) with Foundation 5

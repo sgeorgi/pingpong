@@ -9,3 +9,5 @@ describe 'UserProfileCtrl', ->
     @http.whenGET('/user_profiles/12345').respond(200, @user_profile)
     @http.flush()
 
+
+
