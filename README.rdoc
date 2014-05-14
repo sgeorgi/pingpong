@@ -1,5 +1,5 @@
 == Yet Another Ruby on Rails Application
-
+{<img src="https://travis-ci.org/sgeorgi/yarora.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/sgeorgi/yarora]
 
 This is my own personal basic stack application to fork of new projects from. It is currently under heavy construction!
 

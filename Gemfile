@@ -46,6 +46,7 @@ group :development, :test do
   gem 'sinon-rails'
   gem 'faker'
   gem 'forgery'
+  gem 'spork-rails'
 end
 
 group :test do
