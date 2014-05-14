@@ -18,6 +18,7 @@ gem 'foundation-rails'
 gem 'slim-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
+gem 'geocoder'
 
 gem 'rails_12factor', group: :production
 

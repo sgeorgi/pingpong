@@ -25,10 +25,8 @@ describe UserProfile do
   end
 
   describe 'ASSOCIATIONS' do
-    describe '#user' do
-      it 'belongs to User' do
-        expect(build :user_profile).to belong_to(:user)
-      end
+    it 'belongs to User' do
+      expect(build :user_profile).to belong_to(:user)
     end
   end
 end
