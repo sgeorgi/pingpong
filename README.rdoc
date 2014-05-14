@@ -1,23 +1,4 @@
-== Yet Another Ruby on Rails Application
-{<img src="https://travis-ci.org/sgeorgi/yarora.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/sgeorgi/yarora]
-
-This is my own personal basic stack application to fork of new projects from. It is currently under heavy construction!
-
-Currently implemented features:
-
-* Rails 4.1.1
-* RSpec 3.0.0.beta2
-* Sass/Coffeescript
-* Layout is bootstrapped (hahaha!) with Foundation 5
-
-* User login and self-registration via Devise
-* AdminUser login via Devise
-* ActiveAdmin
-  * User management
-
-* A feature-toggling mechanism to quickly enable or disable features in Views/Controllers (currently via YAML-config)
-* All gems are up-to-date
-
+== PingPong
 
 == Development
 
@@ -25,11 +6,3 @@ ActionMailer is configured to send to localhost on port 2025. You can easily int
 
   mailcatcher --smtp-port 2025
 
----
-
-The main use of this is - besides having a working and current stack to spawn projects off - is to practice and
-implement test-driven-development by using the latest RSpec features and best pratices, while not stubbornly overtesting
-anything
-
-Feel free to fork, spawn your own projects from and contribute (while taking my approach to Specs and coding into account),
-or do whatever you feel fit with it :)
