@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      ping_pong_table: 'Pingpong table'
+    attributes:
+      ping_pong_table:
+        street: 'Street'
+        street_number: 'Number'
+        postal_code: 'ZIP code'
+        city: 'City'

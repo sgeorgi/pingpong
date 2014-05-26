@@ -1,0 +1,10 @@
+de:
+  activerecord:
+    models:
+      ping_pong_table: 'Tischtennisplatte'
+    attributes:
+      ping_pong_table:
+        street: 'Straße'
+        street_number: 'Hausnummer'
+        postal_code: 'Postleitzahl'
+        city: 'Stadt'
