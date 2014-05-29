@@ -5,17 +5,6 @@ describe UserProfile do
     expect { create :user_profile }.not_to raise_error
   end
 
-  describe 'ATTRIBUTES' do
-    let(:user_profile) { UserProfile.new }
-
-    describe '#name' do
-      it 'responds to name' do
-        expect(user_profile).to respond_to(:name)
-        expect(user_profile).to respond_to(:name=)
-      end
-    end
-  end
-
   describe 'VALIDATIONS' do
     describe '#name' do
       it 'fails validation unless present' do
@@ -27,6 +16,18 @@ describe UserProfile do
   describe 'ASSOCIATIONS' do
     it 'belongs to User' do
       expect(build :user_profile).to belong_to(:user)
+    end
+  end
+
+  describe '.create_for_user' do
+    it 'creates and saves a new instance for a given User' do
+      expect_any_instance_of(UserProfile).to receive(:save)
+      UserProfile.create_for_user(build :user)
+    end
+
+    it 'sets the #name temporarily to User#email' do
+      user = build :user, email: 'my@email.com'
+      expect(UserProfile.create_for_user(user).name).to eq('my@email.com')
     end
   end
 end

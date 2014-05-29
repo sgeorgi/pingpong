@@ -24,8 +24,9 @@ en:
     feature_b_desc: 'Super nifty feature'
     feature_c: 'Feature C'
     feature_c_desc: 'Ultra sleazy feature'
-  pages:
-    user_profile:
+
+  user_profiles:
+    show:
       title: 'User data'
 
   devise:
@@ -84,8 +85,14 @@ en:
               confirmation: 'does not match!'
             current_password:
               blank: 'not given!'
+        user_profile:
+          attributes:
+            name:
+              blank: 'not given!'
 
   edit: 'Edit'
   update: 'Update'
+  update_success: 'Changes saved successfully'
+  update_failure: 'Errors occured while trying to save changes'
   are_you_sure: 'are you sure?'
   back: 'Back'

@@ -1,4 +1,11 @@
-test_feature: true
+# Enables the 'Feature' button in the top bar
 feature_page: true
+
+# Enables the locale switcher in the top bar
 locale_switcher: true
+
+# Enables link to user log-in in the top bar
 user_login: true
+
+# Enables link to user profile in the top bar
+user_profile: true

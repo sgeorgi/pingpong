@@ -1,3 +1,22 @@
+@import "foundation_and_overrides";
+
+.error-label {
+  font-size: 0.875rem;
+  color: $warning-color;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
+  float: right;
+}
+
+.field_with_errors {
+  input[type="text"] {
+    border: 1px solid $warning-color;
+  }
+}
+
 .row.full {
   max-width: 100%;
 
@@ -30,9 +49,9 @@
 }
 
 #error_explanation {
-//  background-color: something;
+  //  background-color: something;
 }
 
 div {
-//  border: 1px solid red;
+  //  border: 1px solid red;
 }

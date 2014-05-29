@@ -8,4 +8,13 @@ describe User do
     end
   end
 
+  describe 'CALLBACKS' do
+    describe 'after_initialize #create_user_profile' do
+      it 'calls UserProfile.create_for_user(self) upon creation' do
+        user = build :user
+        expect(UserProfile).to receive(:create_for_user).with(user)
+        user.save
+      end
+    end
+  end
 end

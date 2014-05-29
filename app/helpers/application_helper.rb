@@ -45,4 +45,12 @@ module ApplicationHelper
   def feature_off?(_feature)
     FeatureToggle.off?(_feature)
   end
+
+  def error_for_model_and_attribute(_model, _attribute)
+    if _model.errors[_attribute].any?
+      content_tag :div, class: 'error-label' do
+        "(#{_model.errors[_attribute].join(', ')})"
+      end
+    end
+  end
 end

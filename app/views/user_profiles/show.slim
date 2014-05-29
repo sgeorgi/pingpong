@@ -1,0 +1,11 @@
+h1= t('.title')
+
+= form_for(@user_profile, html: { method: :put }) do |f|
+  .row
+    .large-6.columns
+      = error_for_model_and_attribute @user_profile, :name
+      = f.label :name
+      = f.text_field :name
+  .row
+    .large-2.columns
+      = f.submit t('update'), class: 'button expand'

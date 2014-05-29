@@ -4,27 +4,24 @@ require 'spork'
 #require 'spork/ext/ruby-debug'
 
 Spork.prefork do
-  ENV["RAILS_ENV"] ||= 'test'
+  ENV['RAILS_ENV'] ||= 'test'
   require 'simplecov'
 
-  SimpleCov.start do
-    add_group 'App', 'app/'
-    add_group 'Lib', 'lib/'
-  end
+  SimpleCov.start 'rails'
 
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  require 'shoulda/matchers'
   require 'factory_girl'
   require 'capybara/rails'
   require 'capybara/rspec'
   require 'forgery'
+  require 'shoulda-matchers'
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
   # Checks for pending migrations before tests are run.
   # If you are not using ActiveRecord, you can remove this line.
-#   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+  # ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
   RSpec.configure do |config|
     config.include Capybara::DSL

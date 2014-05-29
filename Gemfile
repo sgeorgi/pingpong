@@ -48,12 +48,13 @@ group :development, :test do
   gem 'faker'
   gem 'forgery'
   gem 'spork-rails'
+  gem 'better_errors'
 end
 
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'capybara', github: 'jnicklas/capybara', branch: 'master'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
 end
 

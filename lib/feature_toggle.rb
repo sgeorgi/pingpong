@@ -14,7 +14,7 @@ module FeatureToggle
   #
   def self.on?(_feat)
     load_from_yaml
-    @features[_feat.to_s] || false
+    @features[_feat.to_s]
   end
 
   #
@@ -31,11 +31,9 @@ module FeatureToggle
     ! on?(_feat)
   end
 
-  private
-
   def self.load_from_yaml
-    _file = File.join(Rails.root, 'config/features.yml')
-    raise 'Feature File not found (config/features.yml)' unless File.exists?(_file)
-    @features = YAML.load_file(_file)
+    file = File.join(Rails.root, 'config/features.yml')
+    raise 'Feature File not found (config/features.yml)' unless File.exists?(file)
+    @features = YAML.load_file(file)
   end
 end

@@ -29,9 +29,6 @@ de:
     feature_b_desc: 'Super tolles Feature'
     feature_c: 'Feature C'
     feature_c_desc: 'Ultra tolles Feature'
-  pages:
-    user_profile:
-      title: 'Benutzerdaten'
 
   devise:
     ui:
@@ -50,6 +47,10 @@ de:
       edit_user: 'Registrierung bearbeiten'
       waiting_for_confirmation: 'Warte auf Bestätigung der Emailadresse:'
       resend_cofirmation: "Bestätigungslink erneut verschicken"
+
+  user_profiles:
+    show:
+      title: 'Benutzerdaten'
 
   activerecord:
       models:
@@ -70,7 +71,7 @@ de:
           remember_me: 'Anmeldedaten merken?'
           current_password: 'Aktuelles Kennwort'
         user_profile:
-          name: 'Vorname und Nachname'
+          name: 'Vor- und Nachname'
       errors:
         models:
           user:
@@ -89,9 +90,15 @@ de:
                 confirmation: 'stimmt nicht überein!'
               current_password:
                 blank: 'ist leer!'
+          user_profile:
+            attributes:
+              name:
+                blank: 'ist leer!'
 
 
   edit: 'Bearbeiten'
   update: 'Aktualisieren'
+  update_success: 'Änderungen wurden gespeichert'
+  update_failure: 'Beim Speichern der Änderungen sind Fehler aufgetreten'
   are_you_sure: 'sind Sie sicher?'
   back: 'Zurück'
