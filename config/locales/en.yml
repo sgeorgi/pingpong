@@ -28,6 +28,7 @@ en:
   user_profiles:
     show:
       title: 'User data'
+      address: 'Postal address'
 
   devise:
     ui:
@@ -67,6 +68,11 @@ en:
         current_password: 'Current password'
       user_profile:
         name: 'Full name'
+      profile/address:
+        street_1: 'Address'
+        street_2: '(Address cont.)'
+        postal_code: 'ZIP code'
+        city: 'City'
     errors:
       models:
         user:
@@ -89,6 +95,16 @@ en:
           attributes:
             name:
               blank: 'not given!'
+        profile/address:
+            attributes:
+              street_1:
+                blank: 'not given!'
+              postal_code:
+                blank: 'not given!'
+                invalid: 'only digits!'
+                wrong_length: 'exactly 5 digits!'
+              city:
+                blank: 'not given!'
 
   edit: 'Edit'
   update: 'Update'

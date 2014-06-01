@@ -9,3 +9,6 @@ user_login: true
 
 # Enables link to user profile in the top bar
 user_profile: true
+
+# Enables Address in user profile
+user_profile_address: true

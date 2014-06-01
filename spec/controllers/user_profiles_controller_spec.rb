@@ -3,8 +3,7 @@ require 'spec_helper'
 describe UserProfilesController do
   context 'when logged in' do
     before(:each) do
-      @user = create :user
-      @user.confirm!
+      @user = create :user, :confirmed
       sign_in @user
     end
 

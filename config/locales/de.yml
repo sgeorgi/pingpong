@@ -51,6 +51,7 @@ de:
   user_profiles:
     show:
       title: 'Benutzerdaten'
+      address: 'Postanschrift'
 
   activerecord:
       models:
@@ -72,6 +73,11 @@ de:
           current_password: 'Aktuelles Kennwort'
         user_profile:
           name: 'Vor- und Nachname'
+        profile/address:
+          street_1: 'Anschrift'
+          street_2: '(2. Zeile)'
+          postal_code: 'PLZ'
+          city: 'Stadt'
       errors:
         models:
           user:
@@ -94,6 +100,17 @@ de:
             attributes:
               name:
                 blank: 'ist leer!'
+          profile/address:
+            attributes:
+              street_1:
+                blank: 'ist leer!'
+              postal_code:
+                blank: 'ist leer!'
+                invalid: 'nur Ziffern'
+                wrong_length: 'genau 5 Zeichen!'
+              city:
+                blank: 'ist leer!'
+
 
 
   edit: 'Bearbeiten'

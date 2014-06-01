@@ -1,0 +1,21 @@
+= f.fields_for :profile_address do |a|
+  .row
+    .large-6.small-centered.columns
+      = error_for_model_and_attribute @user_profile.profile_address, :street_1
+      = a.label :street_1
+      = a.text_field :street_1
+  .row
+    .large-6.small-centered.columns
+      = error_for_model_and_attribute @user_profile.profile_address, :street_2
+      = a.label :street_2
+      = a.text_field :street_2
+  .row
+    .large-6.small-centered.columns
+      = error_for_model_and_attribute @user_profile.profile_address, :postal_code
+      = a.label :postal_code
+      = a.text_field :postal_code
+  .row
+    .large-6.small-centered.columns
+      = error_for_model_and_attribute @user_profile.profile_address, :city
+      = a.label :city
+      = a.text_field :city
