@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature 'Working with the UserProfile', with_devise_user: true do
   scenario 'Successfully changing some attributes' do
+    pending 'Feature :user_login and :user_profile are disabled' unless FeatureToggle.on?(:user_login) and FeatureToggle.on?(:user_profile)
     # Setup
     user_logs_in
 
@@ -20,6 +21,7 @@ feature 'Working with the UserProfile', with_devise_user: true do
   end
 
   scenario 'Failing validations on attempted update' do
+    pending 'Feature :user_login and :user_profile are disabled' unless FeatureToggle.on?(:user_login) and FeatureToggle.on?(:user_profile)
     # Setup
     user_logs_in
 

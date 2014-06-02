@@ -5,6 +5,7 @@ require 'spec_helper'
 
 feature 'Devise', with_devise_user: true do
   scenario 'Existing User logs in and logs out' do
+    pending 'Feature :user_login is disabled' unless FeatureToggle.on?(:user_login)
     user_logs_in
 
     click_link I18n.t('header.user.logout')
@@ -12,6 +13,7 @@ feature 'Devise', with_devise_user: true do
   end
 
   scenario 'User registers and confims via Email' do
+    pending 'Feature :user_login is disabled' unless FeatureToggle.on?(:user_login)
     ActionMailer::Base.deliveries = []
 
     visit '/'
@@ -30,6 +32,7 @@ feature 'Devise', with_devise_user: true do
   end
 
   scenario 'User changes password' do
+    pending 'Feature :user_login is disabled' unless FeatureToggle.on?(:user_login)
     user_logs_in
 
     click_link I18n.t('header.user.profile')
@@ -43,6 +46,7 @@ feature 'Devise', with_devise_user: true do
   end
 
   scenario 'User changes email address and confirms' do
+    pending 'Feature :user_login is disabled' unless FeatureToggle.on?(:user_login)
     ActionMailer::Base.deliveries = []
 
     user_logs_in
@@ -60,6 +64,7 @@ feature 'Devise', with_devise_user: true do
   end
 
   scenario 'User forgets password' do
+    pending 'Feature :user_login is disabled' unless FeatureToggle.on?(:user_login)
     ActionMailer::Base.deliveries = []
 
     visit '/'
@@ -84,6 +89,7 @@ feature 'Devise', with_devise_user: true do
   end
 
   scenario 'User requests another confirmation mail' do
+    pending 'Feature :user_login is disabled' unless FeatureToggle.on?(:user_login)
     ActionMailer::Base.deliveries = []
 
     visit '/'
