@@ -2,6 +2,6 @@ div(ng-controller="MapCtrl" )
   .row
     .large-8.columns
       h1= t('header.title')
-      google-map center="map.center" zoom="map.zoom"
+      #map(style="height: 500px;")
     .large-4.columns
       h3= t('.find_you_table')

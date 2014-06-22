@@ -8,14 +8,15 @@ html ng-app="pingpong"
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: :all
+    = stylesheet_link_tag 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css', media: :all
     = javascript_include_tag 'vendor/modernizr'
-    script(src='//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDdLIPAm2Yqv-d1sXxQVg8zs80emD-Pjgk')
+    = javascript_include_tag 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js'
 
   body
     = render 'layouts/top_bar'
     .hide-for-small
-      .row.full
-        = image_tag 'title.jpg', size: '2000x200'
+      .row.full.logo
+        = image_tag 'title.jpg'
 
     #content
       .row

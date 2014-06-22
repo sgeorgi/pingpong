@@ -1,6 +1,8 @@
 @import "foundation_and_overrides";
 
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container {
+  height: 400px;
+}
 
 .error-label {
   font-size: 0.875rem;
@@ -21,9 +23,12 @@
 
 .row.full {
   max-width: 100%;
+}
 
+.row.logo {
   img {
-    height: 250px;
+    width: 2000px;
+    height: 150px;
   }
 }
 

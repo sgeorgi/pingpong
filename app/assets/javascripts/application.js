@@ -15,8 +15,6 @@
 //= require foundation
 //= require angular
 //= require angular-resource
-//= require lib/lodash.underscore.min.js
-//= require lib/angular-google-maps.js
 //= require pingpong
 //= require_self
 //= require_tree .
