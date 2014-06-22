@@ -1,5 +1,5 @@
 doctype html
-html ng-app="yarora"
+html ng-app="pingpong"
   head
     title
       =content_for(:title) ? yield(:title) : t('header.title')
@@ -9,6 +9,7 @@ html ng-app="yarora"
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: :all
     = javascript_include_tag 'vendor/modernizr'
+    script(src='//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDdLIPAm2Yqv-d1sXxQVg8zs80emD-Pjgk')
 
   body
     = render 'layouts/top_bar'

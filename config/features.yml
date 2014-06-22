@@ -1,5 +1,5 @@
 # Enables the 'Feature' button in the top bar
-feature_page: true
+feature_page: false
 
 # Enables the locale switcher in the top bar
 locale_switcher: true

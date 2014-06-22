@@ -7,7 +7,7 @@ de:
       short: ! '%d. %B, %H:%M Uhr'
   header:
     home: 'Startseite'
-    title: "Yet another Ruby on Rails Application"
+    title: "Tischtennis-Plattensucher"
     shorttitle: "YaRoRA"
     menu: 'Menü'
     user:

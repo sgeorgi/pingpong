@@ -1,7 +1,7 @@
 en:
   header:
     home: 'Home'
-    title: "Yet another Ruby on Rails Application"
+    title: "Pingpong table finder"
     shorttitle: "YaRoRA"
     menu: 'Menu'
     user:

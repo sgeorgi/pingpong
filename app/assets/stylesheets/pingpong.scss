@@ -1,5 +1,7 @@
 @import "foundation_and_overrides";
 
+.angular-google-map-container { height: 400px; }
+
 .error-label {
   font-size: 0.875rem;
   color: $warning-color;
