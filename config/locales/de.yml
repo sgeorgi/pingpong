@@ -22,14 +22,17 @@ de:
       signup: 'Registrierung'
       user_profile: 'Benutzerdaten'
     features: "Features"
-  features:
-    feature_a: 'Feature A'
-    feature_a_desc: 'Mega tolles Feature'
-    feature_b: 'Feature B'
-    feature_b_desc: 'Super tolles Feature'
-    feature_c: 'Feature C'
-    feature_c_desc: 'Ultra tolles Feature'
 
+  welcome:
+    features:
+      feature_a: 'Feature A'
+      feature_a_desc: 'Mega tolles Feature'
+      feature_b: 'Feature B'
+      feature_b_desc: 'Super tolles Feature'
+      feature_c: 'Feature C'
+      feature_c_desc: 'Ultra tolles Feature'
+    index:
+      find_you_table: 'Plattensuche!'
   devise:
     ui:
       sign_in: 'Anmelden'

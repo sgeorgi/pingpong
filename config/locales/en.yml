@@ -15,15 +15,18 @@ en:
       admin_profile: 'Admin Profile'
       signup: 'Register'
       user_profile: 'User data'
-
     features: "Features"
-  features:
-    feature_a: 'Feature A'
-    feature_a_desc: 'Mega nice feature'
-    feature_b: 'Feature B'
-    feature_b_desc: 'Super nifty feature'
-    feature_c: 'Feature C'
-    feature_c_desc: 'Ultra sleazy feature'
+
+  welcome:
+    features:
+      feature_a: 'Feature A'
+      feature_a_desc: 'Mega nice feature'
+      feature_b: 'Feature B'
+      feature_b_desc: 'Super nifty feature'
+      feature_c: 'Feature C'
+      feature_c_desc: 'Ultra sleazy feature'
+    index:
+      find_you_table: 'Find your table!'
 
   user_profiles:
     show:
