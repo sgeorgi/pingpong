@@ -287,6 +287,7 @@ DEPENDENCIES
   jasmine-sinon-rails
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   launchy
   newrelic_rpm
   pg

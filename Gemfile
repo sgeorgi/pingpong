@@ -13,6 +13,7 @@ gem 'ransack',     github: 'activerecord-hackery/ransack'
 gem 'formtastic',  github: 'justinfrench/formtastic'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'angularjs-rails'
 gem 'foundation-rails'
 gem 'slim-rails'
