@@ -6,8 +6,13 @@ class PingPongTable < ActiveRecord::Base
 
   validates_presence_of :street, :street_number, :postal_code, :city, blank: false
 
-  after_validation :geocode, if: -> (obj) { obj.street.present? and
-    obj.street_number.present? and obj.postal_code.present? and obj.city.present? and !obj.geocoded? }
+  after_validation :geocode, if: -> (obj) do
+    obj.street.present? and
+      obj.street_number.present? and
+      obj.postal_code.present? and
+      obj.city.present? and
+      !obj.geocoded?
+  end
 
   def address
     "#{street} #{street_number}, #{postal_code} #{city}"

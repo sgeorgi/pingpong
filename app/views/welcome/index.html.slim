@@ -8,3 +8,4 @@ div(ng-controller="MapCtrl as mc" )
       .button.expand.radius(ng-click="mc.updateMarkers()")= "Update"
       .button.expand.radius.alert(ng-click="mc.clearMarkers()")= "Clear"
       p= "Marker count: {{ mc.activeMarkers.length }}"
+      p= "Map bounds: {{ mc.map.getBounds() }}"
