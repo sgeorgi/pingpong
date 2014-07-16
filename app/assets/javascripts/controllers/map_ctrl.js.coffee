@@ -1,18 +1,31 @@
-class MapCtrl
-  @$inject: ['$q', '$http', '$scope']
+app.controller 'MapCtrl', ['$scope', 'MapService', ($scope, MapService) ->
+  class MapCtrl
+    constructor: (@scope, @map_service) ->
+      console.log "Constructing MapCtrl"
+      @marker = []
 
-  constructor: (@q, @http, @scope) ->
-    @initializeMap()
+      @map = @initializeMap()
+      L.marker(@map_service.getMarker()).addTo(@map)
 
-  initializeMap: ->
-    map = @scope.map
-    map = L.map('map').setView([53.5779706, 10.0027104], 13)
-    L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://www.mapquest.com/" title="MapQuest" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" width="16" height="16">',
-      subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
-    }).addTo(map)
+#    getMarker: () ->
+#    @MapService.getMarker(@map)
+#    .then(
+#      (data) =>
+#        console.log "Promise returned #{data.length} Markers"
+#        @marker = data
+#    ,
+#    (error) =>
+#      console.log "Unable to get Markers: #{error}"
+#    )
 
-    L.marker([53.5779706, 10.0027104]).addTo(map);
+    initializeMap: () ->
+      map = L.map('map').setView([53.5779706, 10.0027104], 13)
+      L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://www.mapquest.com/" title="MapQuest" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" width="16" height="16">',
+        subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
+      }).addTo(map)
+      map
 
-app = angular.module('pingpong')
-app.controller 'MapCtrl', MapCtrl
+  new MapCtrl($scope, MapService)
+]
+

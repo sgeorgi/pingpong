@@ -16,6 +16,8 @@
 //= require angular
 //= require angular-resource
 //= require pingpong
+//= require_tree ./services
+//= require_tree ./controllers
 //= require_self
 //= require_tree .
 
