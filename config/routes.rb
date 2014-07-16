@@ -7,6 +7,7 @@ Yarora::Application.routes.draw do
   root 'welcome#index'
   get 'features' => 'welcome#features', as: :features
 
+  resources :ping_pong_tables, only: [:index]
   resource :user_profile, only: [:show, :update]
 
   # Example of regular route:

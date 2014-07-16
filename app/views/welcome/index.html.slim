@@ -4,4 +4,6 @@ div(ng-controller="MapCtrl as mc" )
       h1= t('header.title')
       #map(style="height: 500px;")
     .large-4.columns
-      h3= t('.find_you_table')
+      h3(ng-click="mc.updateMarkers()")= t('.find_you_table')
+      p= "{{ mc.activeMarkers.length }}"
+      p= "{{ mc.activeBounds }}"

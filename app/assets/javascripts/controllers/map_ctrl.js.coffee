@@ -3,21 +3,29 @@ class MapCtrl
 
   constructor: (@scope, @map_service) ->
     console.log "Constructing MapCtrl"
-    @marker = []
+    @activeMarkers = []
 
     @map = @initializeMap()
-    L.marker(@map_service.getMarker()).addTo(@map)
+    @updateMarkers()
 
-#    getMarker: () ->
-#    @MapService.getMarker(@map)
-#    .then(
-#      (data) =>
-#        console.log "Promise returned #{data.length} Markers"
-#        @marker = data
-#    ,
-#    (error) =>
-#      console.log "Unable to get Markers: #{error}"
-#    )
+    marker = L.marker([53.5779706, 10.0027104])
+    marker.addTo(@map)
+    @map.removeLayer(marker)
+
+  updateMarkers: () ->
+    @map_service.getMarker()
+    .then(
+      (data) =>
+        console.log "Promise returned #{data.length} Markers"
+        @map.removeLayer(marker) for marker in @activeMarkers
+        @activeMarkers = (L.marker([table.latitude, table.longitude]) for table in data)
+        marker.addTo(@map) for marker in @activeMarkers
+        @activeBounds = @map.getBounds()
+    ,
+    (error) =>
+      console.log "Unable to get Markers: #{error}"
+    )
+
 
   initializeMap: () ->
     map = L.map('map').setView([53.5779706, 10.0027104], 13)
@@ -26,5 +34,6 @@ class MapCtrl
       subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
     }).addTo(map)
     map
+
 
 controllersModule.controller 'MapCtrl', MapCtrl, ['$scope', 'MapService']
