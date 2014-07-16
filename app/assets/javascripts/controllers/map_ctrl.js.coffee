@@ -1,7 +1,7 @@
 class MapCtrl
-  @$inject: ['$scope', 'MapService']
+  @$inject: ['$q', '$scope', 'MapService']
 
-  constructor: (@scope, @map_service) ->
+  constructor: (@q, @scope, @map_service) ->
     console.log "Constructing MapCtrl"
     @activeMarkers = []
 
@@ -14,18 +14,26 @@ class MapCtrl
 
   updateMarkers: () ->
     @map_service.getMarker()
-    .then(
-      (data) =>
-        console.log "Promise returned #{data.length} Markers"
-        @map.removeLayer(marker) for marker in @activeMarkers
-        @activeMarkers = (L.marker([table.latitude, table.longitude]) for table in data)
-        marker.addTo(@map) for marker in @activeMarkers
-        @activeBounds = @map.getBounds()
+    .then((data) =>
+      console.log "Promise returned #{data.length} Markers"
+      @processMarkers(data)
     ,
     (error) =>
       console.log "Unable to get Markers: #{error}"
     )
 
+  processMarkers: (markers) ->
+    @clearMarkers()
+    @addMarkers((L.marker([table.latitude, table.longitude]) for table in markers))
+    @activeBounds = @map.getBounds()
+
+  clearMarkers: () ->
+    @map.removeLayer(marker) for marker in @activeMarkers
+    @activeMarkers = []
+
+  addMarkers: (markers) ->
+    marker.addTo(@map) for marker in markers
+    @activeMarkers = markers
 
   initializeMap: () ->
     map = L.map('map').setView([53.5779706, 10.0027104], 13)
@@ -36,4 +44,4 @@ class MapCtrl
     map
 
 
-controllersModule.controller 'MapCtrl', MapCtrl, ['$scope', 'MapService']
+controllersModule.controller 'MapCtrl', MapCtrl, ['$q', '$scope', 'MapService']
