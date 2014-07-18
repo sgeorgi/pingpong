@@ -6,10 +6,10 @@ class MapService
   constructor: (@q, @http, @rootScope) ->
     console.log 'Constructing MapService'
 
-  getMarker: () ->
+  getMarker: (_center, _edge) ->
     deferred = @q.defer()
 
-    @http.get("/ping_pong_tables.json")
+    @http.get("/ping_pong_tables.json?c=" + _center + "&e=" + _edge)
     .success((data, status, headers) =>
       deferred.resolve(data)
     )

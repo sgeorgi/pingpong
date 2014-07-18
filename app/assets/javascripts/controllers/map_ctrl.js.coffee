@@ -8,7 +8,9 @@ class MapCtrl
     @updateMarkers()
 
   updateMarkers: () ->
-    @map_service.getMarker()
+    center = @map.getCenter()
+    northEast = @map.getBounds()._northEast
+    @map_service.getMarker([center.lat, center.lng], [northEast.lat, northEast.lng])
     .then((data) =>
       @processMarkers(data)
     ,
