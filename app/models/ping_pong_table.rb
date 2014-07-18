@@ -22,10 +22,4 @@ class PingPongTable < ActiveRecord::Base
   def address
     "#{street} #{street_number}, #{postal_code} #{city}"
   end
-
-  private
-
-  def zoom_to_km(_zoom)
-    _zoom * 0.25
-  end
 end
