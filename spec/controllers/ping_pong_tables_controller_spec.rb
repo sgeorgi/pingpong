@@ -6,7 +6,7 @@ describe PingPongTablesController do
     let(:edge) { [53.5779706, 10.0027104] }
 
     before(:each) do
-      allow(PingPongTable).to receive(:find_for_center_and_edge).and_return(build :ping_pong_table)
+      allow(PingPongTable).to receive(:for_center_and_edge).and_return([build(:ping_pong_table)])
       get :index, c: center, e: edge, format: :json
     end
 
@@ -19,7 +19,7 @@ describe PingPongTablesController do
     end
 
     it 'calls PingPongTable.find_for_center_and_zoom' do
-      expect(PingPongTable).to have_received(:find_for_center_and_edge).with(center, edge)
+      expect(PingPongTable).to have_received(:for_center_and_edge).with(center, edge)
     end
   end
 end

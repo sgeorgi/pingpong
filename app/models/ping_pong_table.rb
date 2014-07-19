@@ -14,10 +14,10 @@ class PingPongTable < ActiveRecord::Base
       !obj.geocoded?
   end
 
-  def self.find_for_center_and_edge(_center, _edge)
-    distance = Geocoder::Calculations.distance_between(_center, _edge, units: :km)
-    near(_center, distance, units: :km)
-  end
+  scope :for_center_and_edge, -> (_center, _edge) {
+
+    near(_center, Geocoder::Calculations.distance_between(_center, _edge, units: :km), units: :km)
+  }
 
   def address
     "#{street} #{street_number}, #{postal_code} #{city}"

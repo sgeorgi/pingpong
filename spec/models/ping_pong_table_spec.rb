@@ -50,24 +50,26 @@ describe PingPongTable do
     end
   end
 
+  describe 'SCOPES' do
+    describe '.for_center_and_edge' do
+      let(:center) { [53.5779706, 10.0027104] }
+      let(:edge) { [53.5779706, 11.0027104] }
+      let(:distance) { Geocoder::Calculations.distance_between(center, edge, units: :km) }
+
+      it 'calls .near with options' do
+        allow(PingPongTable).to receive(:near).and_return([])
+        PingPongTable.for_center_and_edge(center, edge)
+        expect(PingPongTable).to have_received(:near).with(center, distance, units: :km)
+      end
+    end
+  end
+
   describe '#address' do
     it 'returns a fixed combination of attributes' do
       _ping_pong_table = build :ping_pong_table
 
       expect(_ping_pong_table.address).to eq("#{_ping_pong_table.street} #{_ping_pong_table.street_number}," +
                                                " #{_ping_pong_table.postal_code} #{_ping_pong_table.city}")
-    end
-  end
-
-  describe '.find_for_center_and_edge' do
-    let(:center) { [53.5779706, 10.0027104] }
-    let(:edge) { [53.5779706, 11.0027104] }
-    let(:distance) { Geocoder::Calculations.distance_between(center, edge, units: :km) }
-
-    it 'calls .near with options' do
-      allow(PingPongTable).to receive(:near).and_return([])
-      PingPongTable.find_for_center_and_edge(center, edge)
-      expect(PingPongTable).to have_received(:near).with(center, distance, units: :km)
     end
   end
 end
