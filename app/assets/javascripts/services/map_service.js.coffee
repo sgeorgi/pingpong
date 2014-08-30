@@ -3,10 +3,10 @@ class MapService
   @headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
   @defaultConfig = { headers: @headers }
 
-  constructor: (@q, @http, @rootScope) ->
+  constructor: (@q, @http) ->
     console.log 'Constructing MapService'
 
-  getMarker: (_center, _edge) ->
+  getTables: (_center, _edge) ->
     deferred = @q.defer()
 
     @http.get("/ping_pong_tables.json?c=" + _center + "&e=" + _edge)

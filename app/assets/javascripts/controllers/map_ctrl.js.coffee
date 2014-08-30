@@ -5,30 +5,37 @@ class MapCtrl
     console.log "Constructing MapCtrl"
     @activeMarkers = []
     @map = @initializeMap()
-    @updateMarkers()
+    @updateMap()
 
-  updateMarkers: () ->
+  updateMap: () ->
     center = @map.getCenter()
     northEast = @map.getBounds()._northEast
-    @map_service.getMarker([center.lat, center.lng], [northEast.lat, northEast.lng])
+    @map_service.getTables([center.lat, center.lng], [northEast.lat, northEast.lng])
     .then((data) =>
-      @processMarkers(data)
+      @processTables(data)
     ,
     (error) =>
       console.log "Unable to get Markers: #{error}"
     )
 
-  processMarkers: (markers) ->
-    @clearMarkers()
-    @addMarkers((L.marker([table.latitude, table.longitude]) for table in markers))
+  processTables: (_tables) ->
+    console.log "Processing Tables"
+    @activeTables = _tables
+    @updateMarkers()
 
-  clearMarkers: () ->
+  updateMarkers: ->
+    @clearMarkers()
+    @addMarkers((L.marker([table.latitude, table.longitude]) for table in @activeTables))
+
+  clearMarkers: ->
     @map.removeLayer(marker) for marker in @activeMarkers
     @activeMarkers = []
+    console.log "clearMarkers: " + @activeMarkers.length
 
   addMarkers: (markers) ->
     marker.addTo(@map) for marker in markers
     @activeMarkers = markers
+    console.log "addMarkers: " + @activeMarkers.length
 
   initializeMap: () ->
     map = L.map('map').setView([53.5779706, 10.0027104], 13)
@@ -38,7 +45,7 @@ class MapCtrl
     }).addTo(map)
 
     map.on("load moveend", (e) =>
-       @updateMarkers()
+       @updateMap()
     )
     map
 

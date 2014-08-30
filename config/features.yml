@@ -5,10 +5,10 @@ feature_page: false
 locale_switcher: true
 
 # Enables link to user log-in in the top bar
-user_login: true
+user_login: false
 
 # Enables link to user profile in the top bar
-user_profile: true
+user_profile: false
 
 # Enables Address in user profile
-user_profile_address: true
+user_profile_address: false

@@ -1,11 +1,15 @@
 div(ng-controller="MapCtrl as mc" )
   .row
-    .large-8.columns
+    .large-6.columns
       h1= t('header.title')
-      #map(style="height: 500px;")
-    .large-4.columns
-      h1= "---"
-      .button.expand.radius(ng-click="mc.updateMarkers()")= "Update"
-      .button.expand.radius.alert(ng-click="mc.clearMarkers()")= "Clear"
+    .large-6.columns style="vertial-align: bottom;"
+      h3= "Search"
+  .row
+    .large-6.columns
+      #map style="height: 500px;"
+    .large-6.columns style="height: 500px;"
       p= "Marker count: {{ mc.activeMarkers.length }}"
       p= "Map center: {{ mc.map.getCenter() }}"
+
+      div ng-repeat="marker in mc.activeMarkers"
+        | {{ marker._latlng.lat }} - {{ marker._latlng.lng }}
