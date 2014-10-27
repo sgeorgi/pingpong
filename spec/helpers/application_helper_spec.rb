@@ -24,10 +24,10 @@ describe ApplicationHelper do
   end
 
   describe '#locale_switch' do
-    # it 'returns a link to switch locales' do
-    #   expect(helper.locale_switch).to eq("")
-    # end
-    pending 'ActionController::UrlGenerationError: No route matches {:locale=>"en"}'
+    it 'returns a link to switch locales' do
+      pending 'ActionController::UrlGenerationError: No route matches {:locale=>"en"}'
+      expect(helper.locale_switch).to eq("")
+    end
   end
 
   describe '#error_for_model_and_attribute' do
