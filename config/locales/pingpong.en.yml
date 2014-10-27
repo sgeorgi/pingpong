@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      ping_pong_table: 'Pingpong table'
+      ping_pong_table: 'Table tennis table'
     attributes:
       ping_pong_table:
         street: 'Street'

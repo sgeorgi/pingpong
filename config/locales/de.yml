@@ -7,8 +7,8 @@ de:
       short: ! '%d. %B, %H:%M Uhr'
   header:
     home: 'Startseite'
-    title: "Tischtennis-Plattensucher"
-    shorttitle: "PingPong"
+    title: "Tischtennis Match Maker"
+    shorttitle: "TTMM"
     menu: 'Menü'
     user:
       title: 'Benutzer'

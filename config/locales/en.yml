@@ -1,8 +1,8 @@
 en:
   header:
     home: 'Home'
-    title: "Pingpong table finder"
-    shorttitle: "PingPong"
+    title: "Table Tennis Matchmaker"
+    shorttitle: "TTMM"
     menu: 'Menu'
     user:
       title: 'User'
