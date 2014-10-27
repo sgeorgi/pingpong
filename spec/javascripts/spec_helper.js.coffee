@@ -3,7 +3,7 @@
 #= require sinon
 #= require jasmine-sinon
 
-beforeEach(module('yarora'))
+beforeEach(module('pingpong'))
 
 beforeEach inject (_$httpBackend_, _$compile_, $rootScope, $controller, $location, $injector, $timeout) ->
   @scope = $rootScope.$new()
