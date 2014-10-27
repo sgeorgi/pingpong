@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'Working with the UserProfile', with_devise_user: true do
   scenario 'Successfully changing some attributes' do

@@ -1,25 +1,25 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ApplicationHelper do
   describe '#feature_on?' do
     it 'returns true for :test_feature' do
       allow(YAML).to receive(:load_file).and_return({ 'test_feature' => true })
-      expect(feature_on?(:test_feature)).to be_true
+      expect(feature_on?(:test_feature)).to be_truthy
     end
 
     it 'returns false for :undefined' do
-      expect(feature_on?(:undefined)).to be_false
+      expect(feature_on?(:undefined)).to be_falsey
     end
   end
 
   describe '#feature_off?' do
     it 'returns false for :test_feature' do
       allow(YAML).to receive(:load_file).and_return({ 'test_feature' => true })
-      expect(feature_off?(:test_feature)).to be_false
+      expect(feature_off?(:test_feature)).to be_falsey
     end
 
     it 'returns true for :undefined' do
-      expect(feature_off?(:undefined)).to be_true
+      expect(feature_off?(:undefined)).to be_truthy
     end
   end
 

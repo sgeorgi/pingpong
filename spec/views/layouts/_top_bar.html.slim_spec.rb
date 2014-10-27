@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'layouts/_top_bar.html.slim' do
   # Get rid of the faulty locale switcher, because it's not controller/action-agnostic

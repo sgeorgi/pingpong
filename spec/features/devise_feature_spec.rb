@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 # email = 'test@test.com'
 # password = 'ABC123xyz!!'

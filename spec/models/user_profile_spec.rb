@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe UserProfile do
   it 'creates from a Factory' do
@@ -8,7 +8,9 @@ describe UserProfile do
   describe 'VALIDATIONS' do
     describe '#name' do
       it 'fails validation unless present' do
-        expect(build :user_profile, name: nil).to have(1).error_on(:name)
+        user_profile = build :user_profile, name: nil
+        expect(user_profile.valid?).to be_falsey
+        expect(user_profile.errors[:name].size).to eq(1)
       end
     end
   end

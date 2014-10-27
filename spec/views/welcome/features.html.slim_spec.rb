@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'welcome/index.html.slim' do
   it 'renders without fail' do
