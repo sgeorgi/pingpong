@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.7'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'coffee-rails', '~> 4.0.1'
@@ -42,7 +42,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'rspec-rails', '3.1.0' 
+  gem 'rspec-rails', '>=3.1.0' 
   gem 'simplecov', require: false, group: :test
   gem 'factory_girl_rails'
   gem 'jasmine-rails'
